@@ -9,7 +9,9 @@ add_library(nat STATIC
     maidsafe_network_interface.cc
     maidsafe_gateway.cc
     maidsafe_utils.cc)
+if(!MSVC)
 add_definitions(-Wno-unused-function) # in maidsafe_network_interface.cc
+endif()
 
 if (UNIX AND NOT APPLE)
     add_definitions(-DMAIDSAFE_LINUX)

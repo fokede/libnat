@@ -72,7 +72,7 @@ class CallLaterTimer {
   bool is_started_;
   TimersMap timers_;
   boost::asio::io_service io_service_;
-  boost::asio::strand strand_;
+  boost::asio::io_service::strand strand_;
   std::shared_ptr<boost::asio::io_service::work> work_;
   std::shared_ptr<std::thread> worker_thread_;
   uint32_t call_later_id_;
